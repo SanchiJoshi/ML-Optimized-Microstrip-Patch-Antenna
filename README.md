@@ -1,6 +1,6 @@
 # ML-Optimized-Microstrip-Patch-Antenna
 
-Welcome! This project explores how Machine Learning (ML) can be used to predict the performance of **flag-shaped microstrip patch antennas**—specifically their **return loss** and **bandwidth**—without relying on time-consuming electromagnetic simulations (like HFSS).
+Welcome! This project explores how Machine Learning (ML) can be used to predict the performance of **flag-shaped microstrip patch antennas**—specifically **return loss** without relying on time-consuming electromagnetic simulations (like HFSS).
 
 ---
 
