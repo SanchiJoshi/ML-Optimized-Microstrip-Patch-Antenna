@@ -42,7 +42,9 @@ Antenna design is often an iterative and computationally heavy task. By training
 
 - **Format**: Excel file (`.xlsx`)
 - **Number of Samples**:
-  - 325
+  - Total samples : 325
+  - Training samples : 292
+  - Testing samples : 33
 - **Target Variable**:
   - Return Loss
 - **Units**:
