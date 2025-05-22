@@ -63,8 +63,6 @@ print(f"Predicted Frequency (GHz): {predicted_frequency[0]}")
 
 """## **IMPLEMENTING GENETIC ALGORITHM**"""
 
-!pip install deap
-
 from sklearn.model_selection import cross_val_score
 from deap import base, creator, tools, algorithms
 import numpy as np
