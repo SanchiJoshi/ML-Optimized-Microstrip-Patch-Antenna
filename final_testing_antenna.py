@@ -221,7 +221,7 @@ toolbox.register("evaluate", rf_fitness)
 
 # Run GA
 population = toolbox.population(n=50)
-algorithms.eaSimple(population, toolbox, cxpb=0.7, mutpb=0.2, ngen=20, verbose=True)
+algorithms.eaSimple(population, toolbox, cxpb=0.7, mutpb=0.2, ngen=50, verbose=True)
 best = tools.selBest(population, k=1)[0]
 print("Best Parameters:", best)
 
