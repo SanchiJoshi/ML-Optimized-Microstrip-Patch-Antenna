@@ -13,9 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, r2_score
 
-from google.colab import files
-uploaded = files.upload()
-file_name = list(uploaded.keys())[0]
+file_name = 'flag_shaped_antenna_dataset.xlsx'
 data = pd.read_excel(file_name)
 data.head()
 
