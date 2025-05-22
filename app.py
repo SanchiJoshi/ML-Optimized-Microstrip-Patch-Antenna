@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify
 from joblib import load
 import numpy as np
+import pickle
 
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return "✅ Antenna Frequency Prediction API is running. Use POST /predict."
 
 # Load scaler and models
 scaler = load("scaler.pkl")
