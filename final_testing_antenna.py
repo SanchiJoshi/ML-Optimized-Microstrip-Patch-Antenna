@@ -13,9 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, r2_score
 
-from google.colab import files
-uploaded = files.upload()
-file_name = list(uploaded.keys())[0]
+file_name = 'flag_shaped_antenna_dataset.xlsx'
 data = pd.read_excel(file_name)
 data.head()
 
@@ -64,8 +62,6 @@ predicted_frequency = svr_model.predict(new_data_scaled)
 print(f"Predicted Frequency (GHz): {predicted_frequency[0]}")
 
 """## **IMPLEMENTING GENETIC ALGORITHM**"""
-
-!pip install deap
 
 from sklearn.model_selection import cross_val_score
 from deap import base, creator, tools, algorithms
@@ -225,7 +221,7 @@ toolbox.register("evaluate", rf_fitness)
 
 # Run GA
 population = toolbox.population(n=50)
-algorithms.eaSimple(population, toolbox, cxpb=0.7, mutpb=0.2, ngen=20, verbose=True)
+algorithms.eaSimple(population, toolbox, cxpb=0.7, mutpb=0.2, ngen=50, verbose=True)
 best = tools.selBest(population, k=1)[0]
 print("Best Parameters:", best)
 
@@ -253,21 +249,7 @@ new_data_scaled = scaler.transform(new_data_df)
 predicted_frequency = optimized_rf.predict(new_data_scaled)
 print(f"Predicted Frequency (GHz): {predicted_frequency[0]}")
 
-from sklearn.metrics import mean_squared_error
-import numpy as np
-# Actual frequency value
-actual_frequency = np.array([2.0263])
-# Predicted values from different models
-predictions = {
-    "SVR without GA": np.array([2.1199]),
-    "SVR with GA": np.array([2.0547]),
-    "RF without GA": np.array([2.0330]),
-    "RF with GA": np.array([2.0342])
-}
-# Compute and display MSE for each model
-for model, pred in predictions.items():
-    mse = mean_squared_error(actual_frequency, pred)
-    print(f"{model} - MSE: {mse:.6f}")
+
 
 
 
