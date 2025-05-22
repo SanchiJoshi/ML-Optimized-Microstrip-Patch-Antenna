@@ -249,6 +249,12 @@ new_data_scaled = scaler.transform(new_data_df)
 predicted_frequency = optimized_rf.predict(new_data_scaled)
 print(f"Predicted Frequency (GHz): {predicted_frequency[0]}")
 
+from joblib import dump
+dump(scaler, 'scaler.pkl')
+dump(svr_model, 'svr_model.pkl')
+dump(optimized_svr, 'svr_ga_model.pkl')
+dump(rf_model, 'rf_model.pkl')
+dump(optimized_rf, 'rf_ga_model.pkl')
 
 
 
