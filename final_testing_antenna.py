@@ -249,21 +249,7 @@ new_data_scaled = scaler.transform(new_data_df)
 predicted_frequency = optimized_rf.predict(new_data_scaled)
 print(f"Predicted Frequency (GHz): {predicted_frequency[0]}")
 
-from sklearn.metrics import mean_squared_error
-import numpy as np
-# Actual frequency value
-actual_frequency = np.array([2.0263])
-# Predicted values from different models
-predictions = {
-    "SVR without GA": np.array([2.1199]),
-    "SVR with GA": np.array([2.0547]),
-    "RF without GA": np.array([2.0330]),
-    "RF with GA": np.array([2.0342])
-}
-# Compute and display MSE for each model
-for model, pred in predictions.items():
-    mse = mean_squared_error(actual_frequency, pred)
-    print(f"{model} - MSE: {mse:.6f}")
+
 
 
 
