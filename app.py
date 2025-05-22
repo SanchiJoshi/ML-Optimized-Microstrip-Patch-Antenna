@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from joblib import load
 import numpy as np
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Load scaler and models
 scaler = load("scaler.pkl")
@@ -41,5 +41,5 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     app.run(host="0.0.0.0", port=5000)
