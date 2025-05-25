@@ -11,16 +11,16 @@ def home():
 # Load scaler and models
 scaler = load("scaler.pkl")
 svr_model = load("svr_model.pkl")
-svr_ga_model = load("svr_ga_model.pkl")
+optimized_svr = load("optimized_svr.pkl")
 rf_model = load("rf_model.pkl")
-rf_ga_model = load("rf_ga_model.pkl")
+optimized_rf = load("optimized_rf.pkl")
 
 # Model selector
 models = {
     "svr": svr_model,
-    "svr_ga": svr_ga_model,
+    "svr_ga": optimized_svr,
     "rf": rf_model,
-    "rf_ga": rf_ga_model
+    "rf_ga": optimized_rf
 }
 
 @app.route("/predict", methods=["POST"])
@@ -45,5 +45,5 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

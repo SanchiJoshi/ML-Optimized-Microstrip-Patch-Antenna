@@ -252,9 +252,9 @@ print(f"Predicted Frequency (GHz): {predicted_frequency[0]}")
 from joblib import dump
 dump(scaler, 'scaler.pkl')
 dump(svr_model, 'svr_model.pkl')
-dump(optimized_svr, 'svr_ga_model.pkl')
+dump(optimized_svr, 'optimized_svr.pkl')
 dump(rf_model, 'rf_model.pkl')
-dump(optimized_rf, 'rf_ga_model.pkl')
+dump(optimized_rf, 'optimized_rf.pkl')
 
 
 
